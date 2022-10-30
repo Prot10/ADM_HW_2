@@ -84,6 +84,7 @@ def get_types(signed=True, unsigned=True, custom=[]):
     type_df['size'] = type_df['np_type'].apply(lambda row: row.itemsize)
     type_df.sort_values(by=['size', 'allow_negatives'], inplace=True)
     return type_df.reset_index(drop=True)
+
 def downcast_int(file_path, column:str, chunksize=10000, delimiter=',', signed=True, unsigned=True):
     '''Assigns the smallest possible dtype to an integer column of a csv'''
     types = get_types(signed, unsigned)
@@ -157,7 +158,7 @@ def clock_graph(hours: pd.Series, labels:list=None):
     # Plot data
     ax.plot(angles, [*hours, hours.iloc[0]], linewidth=2, linestyle='solid')
     hour_max = hours.index.get_loc(hours.idxmax()) if N!=24 else hours.idxmax()-N//4
-    ax.plot(angles[hour_max],M, 'bo', label=f"Max: {M}")
+    ax.plot(angles[int(hour_max)],M, 'bo', label=f"Max: {M}")
 
     # Fill area
     ax.fill(angles[:-1], hours, 'b', alpha=0.3)
@@ -186,7 +187,7 @@ EMOJIS = re.compile("["
                                 "]+", flags=re.UNICODE)
 
 
-def safe_detect(s, minsize=6):
+def safe_detect(s):
     try:
         return detect(s)
     except:
