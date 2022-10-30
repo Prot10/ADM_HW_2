@@ -4,6 +4,6 @@ The purpose of this repository is to answer the assigned questions in the [Homew
 
 The data analysis is performed on the [Instagram-Dataset](https://www.kaggle.com/datasets/shmalex/instagram-dataset). The repository consists of the following files:
 
-1. `general.ipynb`: a Jupyter Notebook that answers all the aforementioned questions, Research, Algorithmic, Command Line, Bonus.
+1. `general.ipynb`: a Jupyter Notebook that answers all the aforementioned questions, Research, Algorithmic, Command Line, Bonus, can be viewed [here](https://nbviewer.org/github/Mamiglia/ADM_HW_2/blob/main/general.ipynb).
 2. `functions.py`: a python script that contains all the custom function used in the Notebook
 3. `CommandLine.sh`: a file that provides an answer to the Commmand Line question
