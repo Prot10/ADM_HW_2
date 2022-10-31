@@ -157,7 +157,7 @@ def clock_graph(hours: pd.Series, labels:list=None):
     # Plot data
     ax.plot(angles, [*hours, hours.iloc[0]], linewidth=2, linestyle='solid')
     hour_max = hours.index.get_loc(hours.idxmax()) if N!=24 else hours.idxmax()-N//4
-    ax.plot(angles[hour_max],M, 'bo', label=f"Max: {M}")
+    ax.plot(angles[hour_max],int(M), 'bo', label=f"Max: {M}")
 
     # Fill area
     ax.fill(angles[:-1], hours, 'b', alpha=0.3)
